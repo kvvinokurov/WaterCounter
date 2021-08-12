@@ -23,6 +23,7 @@ namespace IHostedServiceAsAService
         private SerialPortInfo _serialPortInfo;
         private ILogger _logger;
 
+        /// <inheritdoc />
         public void Dispose()
         {
             _serialPortSearchTimer?.Dispose();
@@ -198,7 +199,7 @@ namespace IHostedServiceAsAService
                     {
                         Name = obj[CaptionPropertyName].ToString(),
                         ComPort = reg.Matches(obj[CaptionPropertyName].ToString()).Count > 0
-                            ? reg.Matches(obj[CaptionPropertyName].ToString()).First().Groups.Last().Value
+                            ? reg.Matches(obj[CaptionPropertyName].ToString()).First().Groups.Last<Capture>().Value
                             : null
                     })
                     .Where(data => !string.IsNullOrEmpty(data.ComPort))
