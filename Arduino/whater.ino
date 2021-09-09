@@ -62,7 +62,7 @@ void loop() {
       waterMetersValues[i] = currentWaterMeter;
       ledsBrightness[i] = ledMaxValue;
       analogWrite(ledPins[i], ledsBrightness[i]);
-      Serial.println(i);
+      Serial.println(i+1);
      }
   }
 }
