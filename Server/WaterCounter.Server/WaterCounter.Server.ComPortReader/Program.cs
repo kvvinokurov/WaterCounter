@@ -2,6 +2,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Hosting;
+using WaterCounter.Server.ComPortReader.Repository;
+using WaterCounter.Server.ComPortReader.Services;
 
 
 namespace WaterCounter.Server.ComPortReader
@@ -11,7 +13,6 @@ namespace WaterCounter.Server.ComPortReader
     {
         public static void Main(string[] args)
         {
-
             CreateHostBuilder(args).Build().Run();
         }
 

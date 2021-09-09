@@ -1,4 +1,4 @@
-﻿namespace WaterCounter.Server.ComPortReader
+﻿namespace WaterCounter.Server.ComPortReader.Repository
 {
     public interface IRawDataRepository
     {

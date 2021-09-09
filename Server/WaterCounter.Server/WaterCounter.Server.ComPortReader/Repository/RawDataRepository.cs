@@ -5,7 +5,7 @@ using System.Linq;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 
-namespace WaterCounter.Server.ComPortReader
+namespace WaterCounter.Server.ComPortReader.Repository
 {
     internal class RawDataRepository : IRawDataRepository
     {

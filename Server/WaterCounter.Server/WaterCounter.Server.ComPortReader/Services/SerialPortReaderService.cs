@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WaterCounter.Server.ComPortReader.Data;
+using WaterCounter.Server.ComPortReader.Repository;
 
-namespace WaterCounter.Server.ComPortReader
+namespace WaterCounter.Server.ComPortReader.Services
 {
     public class SerialPortReaderService : IHostedService, IDisposable
     {
