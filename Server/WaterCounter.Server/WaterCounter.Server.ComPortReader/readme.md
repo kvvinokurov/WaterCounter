@@ -1,0 +1,1 @@
+﻿- How to install as Windows Service: https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/windows-service?view=aspnetcore-5.0&tabs=visual-studio

@@ -21,6 +21,7 @@ namespace WaterCounter.Server.ComPortReader
                 .UseWindowsService()
                 .ConfigureServices((hostContext, services) =>
                 {
+                    services.AddTransient<IRawDataRepository, RawDataRepository>();
                     services.AddHostedService<SerialPortReaderService>();
                 })
                 .ConfigureLogging(logging =>

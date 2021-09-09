@@ -20,15 +20,17 @@ namespace WaterCounter.Server.ComPortReader
         private const string CaptionPropertyName = "Caption";
 
         private readonly ILogger<SerialPortReaderService> _logger;
+        private readonly IRawDataRepository _rawDataRepository;
         private SerialPort _serialPort;
         private Timer _serialPortHealthTimer;
         private SerialPortInfo _serialPortInfo;
         private Timer _serialPortSearchTimer;
 
 
-        public SerialPortReaderService(ILogger<SerialPortReaderService> logger)
+        public SerialPortReaderService(ILogger<SerialPortReaderService> logger, IRawDataRepository rawDataRepository)
         {
             _logger = logger;
+            _rawDataRepository = rawDataRepository;
         }
 
         public void Dispose()
@@ -215,6 +217,7 @@ namespace WaterCounter.Server.ComPortReader
             var waterCounter = comPort.ReadLine()?.Trim();
             var wcNumber = !string.IsNullOrEmpty(waterCounter) ? Convert.ToUInt16(waterCounter) : 0;
             _logger.LogInformation(wcNumber.ToString());
+            _rawDataRepository.Add(wcNumber);
         }
     }
 }
